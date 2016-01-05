@@ -8,6 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.block.BlockState;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.util.BlockIterator;
@@ -122,6 +123,8 @@ public class Acid extends PlayerCommandMiddle {
 			Utility.reinforcementBroken(p, pRein);
 			rm.deleteReinforcement(pTopRein);
 			
+			BlockState bs = block.getState();
+			bs.update(false, true);
 		}
 		return true;
 	}
